@@ -25,6 +25,7 @@ constexpr double k(1.60219e-31); //!< energy conversion constant GJ/keV
 constexpr double a(0.01372);     //!< Boltzmann constant in GJ/cm^3/keV^4
 constexpr double a_SO(1.0);      //!< Boltzmann constant for SO problems
 constexpr double cutoff_fraction = 0.01; // note: get this from IMC_state in the future
+//constexpr double cutoff_fraction = 1.0e-6; // note: get this from IMC_state in the future
 
 // parameters used in intensive scattering
 constexpr double m_1 = 495.0;       // keV
@@ -33,7 +34,6 @@ constexpr double intensive_scatter_fraction = 0.1; // this fraction of scatters 
 constexpr double lower_frequency_bound = 0.01; // keV
 constexpr double upper_frequency_bound = 100.0; // keV
 constexpr double delta_frequency_bounds=upper_frequency_bound - lower_frequency_bound; // keV
-
 
 enum bc_type { REFLECT, VACUUM, ELEMENT, SOURCE, PROCESSOR }; //!< Boundary conditions
 enum dir_type { X_NEG, X_POS, Y_NEG, Y_POS, Z_NEG, Z_POS }; //!< Directions
