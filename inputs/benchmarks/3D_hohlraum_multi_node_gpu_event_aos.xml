@@ -2,20 +2,24 @@
   <common>
     <method>IMC</method>
     <t_start>0.0</t_start>
-    <t_stop>0.05</t_stop>
-    <dt_start>0.01</dt_start>
+    <t_stop>0.020</t_stop>
+    <dt_start>0.001</dt_start>
     <t_mult>1.0</t_mult>
     <dt_max>1.0</dt_max>
-    <photons>10000000</photons>
+    <photons>250000000</photons>
     <seed>14706</seed>
     <tilt>FALSE</tilt>
     <stratified_sampling>FALSE</stratified_sampling>
     <use_gpu_transporter>TRUE</use_gpu_transporter>
-    <dd_transport_type>REPLICATED</dd_transport_type>
+    <dd_transport_type>PARTICLE_PASS</dd_transport_type>
     <particle_algorithm>EVENT</particle_algorithm>
-    <particle_storage>SOA</particle_storage>
+    <particle_storage>AOS</particle_storage>
     <n_omp_threads>1</n_omp_threads>
+    <mesh_decomposition>METIS</mesh_decomposition>
+    <batch_size>5000</batch_size>
+    <particle_message_size>10000</particle_message_size>
     <output_frequency>1</output_frequency>
+    <umpire_device_pool_size>16</umpire_device_pool_size>
     <write_silo>FALSE</write_silo>
   </common>
 
@@ -462,8 +466,8 @@
       <opacB>0.0</opacB>
       <opacC>0.0</opacC>
       <opacS>0.0</opacS>
-      <initial_T_e>1.0</initial_T_e>
-      <initial_T_r>1.0</initial_T_r>
+      <initial_T_e>0.1</initial_T_e>
+      <initial_T_r>0.1</initial_T_r>
     </region>
     <!-- vacuum/void -->
     <region>
@@ -474,8 +478,8 @@
       <opacB>0.0</opacB>
       <opacC>0.0</opacC>
       <opacS>0.0</opacS>
-      <initial_T_e>0.001</initial_T_e>
-      <initial_T_r>0.001</initial_T_r>
+      <initial_T_e>0.1</initial_T_e>
+      <initial_T_r>0.1</initial_T_r>
     </region>
     <!-- hohlraum -->
     <region>
@@ -486,8 +490,8 @@
       <opacB>0.0</opacB>
       <opacC>0.0</opacC>
       <opacS>0.0</opacS>
-      <initial_T_e>0.001</initial_T_e>
-      <initial_T_r>0.001</initial_T_r>
+      <initial_T_e>0.1</initial_T_e>
+      <initial_T_r>0.1</initial_T_r>
     </region>
   </regions>
 </prototype>
